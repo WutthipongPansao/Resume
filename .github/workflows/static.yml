@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wutthipong Pansao - Data Scientist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* --- Google Font Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+        /* --- CSS Variables (Root) --- */
+        :root {
+            --left-bg-color: #313131;
+            --right-bg-color: #FFFFFF;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --accent-color: #EFEFEF;
+            --border-color: #CCCCCC;
+        }
+
+        /* --- General Styling --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #F5F5F5;
+            color: var(--text-dark);
+        }
+
+        .resume-container {
+            display: flex;
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: var(--right-bg-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- Left Panel --- */
+        .left-panel {
+            background-color: var(--left-bg-color);
+            color: var(--text-light);
+            width: 25%;
+            padding: 40px 30px;
+        }
+
+        .profile-image {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--right-bg-color);
+        }
+
+        .left-panel h2 {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--text-light);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .left-panel p, .left-panel ul li {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #DDDDDD;
+        }
+
+        .left-panel section {
+            margin-bottom: 30px;
+        }
+
+        .left-panel a {
+            color: #DDDDDD;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .left-panel a:hover {
+            text-decoration: underline;
+        }
+
+        .hobbies ul {
+            list-style: none;
+        }
+        .hobbies ul li {
+            margin-bottom: 5px;
+        }
+
+        /* --- Right Panel --- */
+        .right-panel {
+            width: 65%;
+            padding: 40px;
+        }
+
+        header {
+            text-align: right;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header .subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 4px;
+            margin-top: 5px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .contact-info span {
+            margin-left: 20px;
+        }
+
+        .contact-info i {
+            margin-right: 5px;
+            color: var(--text-dark);
+        }
+
+        .right-panel h2 {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--text-dark);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .job, .edu-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .job:before, .edu-item:before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--text-dark);
+        }
+
+        .job-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .job-header h3, .edu-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .job-header p, .edu-header p {
+            text-align: right;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .right-panel ul {
+            list-style: none;
+            padding-left: 15px;
+        }
+
+        .right-panel ul li {
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .right-panel ul li:before {
+            content: '▪';
+            position: absolute;
+            left: -15px;
+            font-size: 12px;
+        }
+
+        .skills, .languages {
+            margin-top: 30px;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-item {
+            font-size: 14px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background-color: var(--accent-color);
+            margin-top: 5px;
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: var(--text-dark);
+        }
+
+        .languages .skill-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <aside class="left-panel">
+            <div class="profile-image">
+                <img src="C:\การบ้านมหาลัย\ปี3เทอม1\Commi and Network\Resume\Image\wutthipong.jpg" alt="Wutthipong Pansao">
+            </div>
+            <section class="about-me">
+                <h2>ABOUT ME</h2>
+                <p>A skilled and adaptable software developer proficient in multiple programming languages. Specializes in the comparative analysis of technologies to build efficient and scalable solutions.</p>
+            </section>
+            <section class="links">
+                <h2>LINKS</h2>
+                <p><strong>Fackbook:</strong><br><a href="url">https://www.facebook.com/wutthipong.pansao/</a></p>
+                <p><strong>Twitter:</strong><br><a href="url">https://x.com/MZas123</a></p>
+            </section>
+            
+            <section class="hobbies">
+                <h2>HOBBIES</h2>
+                <ul>
+                    <li>READING</li>
+                    <li>CHESS</li>
+                    <li>PLAYGAMES</li>
+                    <li>PHOTOGRAPHY</li>
+                    <li>CODING</li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="right-panel">
+            <header>
+                <h1>Wutthipong Pansao</h1>
+                <p class="subtitle">Mathematics with Computer Science</p>
+                <div class="contact-info">
+                    <span><i class="fas fa-map-marker-alt"></i> 129/29, Rayoung, Banchang, 21130, Thailand</span>
+                    <span><i class="fas fa-phone-alt"></i> +66 099-069-4671</span>
+                    <span><i class="fas fa-envelope"></i> wutthipong.pansao@gmail.com</span>
+                </div>
+            </header>
+
+            <section class="work-experience">
+                <h2>WORK EXPERIENCE</h2>
+                <div class="job">
+                    <div class="job-header">
+                        <h3>Freelance</h3>
+                        
+                    </div>
+                    <ul>
+                        <li>Developed Website.</li>
+                        <li>Website administrator.</li>
+                        
+                    </ul>
+                </div>
+                <div class="job">
+                    <div class="job-header">
+                        <h3>Part-time</h3>
+                         
+                    </div>
+                    <ul>
+                        <li>Use excel.</li>
+                        <li>Implemented data models and algorithms.</li>
+                        
+                    </ul>
+                </div>
+            </section>
+
+            <section class="education">
+                <h2>EDUCATION</h2>
+                 <div class="edu-item">
+                    <div class="edu-header">
+                        <h3>Science and Mathematics</h3>
+                        <p><strong>B.K.W</strong><br>Rayoung<br>2017-2023</p>
+                    </div>
+                    <ul>
+                        <li>Learn how to write for the web and use Notepad.</li>
+                        <li>Learn how to use Photoshop.</li>
+                    </ul>
+                </div>
+                <div class="edu-item">
+                     <div class="edu-header">
+                        <h3>Mathematics with Computer Science</h3>
+                        <p><strong>Kmutnb</strong><br>Bangkok<br>2023-present</p>
+                    </div>
+                    <ul>
+                        <li>Learn about Data Structures and Algorithms.</li>
+                        <li>Mathematics1-2</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="skills">
+                <h2>SKILLS</h2>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <span>PYTHON</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>HTML</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Adobe Photoshop</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 95%;"></div></div>
+                    </div>
+                     <div class="skill-item">
+                        <span>Canva</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Photography</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>PowerPoint</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+                    </div>
+                </div>
+            </section>
+
+             <section class="languages">
+                <h2>LANGUAGES</h2>
+                <div class="skill-grid">
+                     <div class="skill-item">
+                        <span>Thai</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>English</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 50%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Japanese</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 20%;"></div></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
